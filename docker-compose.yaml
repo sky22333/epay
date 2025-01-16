@@ -1,0 +1,21 @@
+services:
+  web:
+    build: .
+    container_name: epay
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword     # 数据库root密码
+      MYSQL_DATABASE: skyepay               # 数据库名称
+      MYSQL_USER: skyeuser                  # 数据库用户名
+      MYSQL_PASSWORD: skyuserpassword       # 数据库用户密码
+    volumes:
+      - ./data/epay:/var/lib/mysql         # 持久化数据库数据到本地
