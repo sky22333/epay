@@ -17,5 +17,3 @@ services:
       MYSQL_DATABASE: epay             # 数据库名称
       MYSQL_USER: epay                 # 数据库用户名
       MYSQL_PASSWORD: epay7890         # 数据库用户密码
-    volumes:
-      - ./data/epay:/var/lib/mysql
