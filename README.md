@@ -2,7 +2,7 @@
 ```
 services:
   web:
-    image: ghcr.io/sky22333/epay:latest
+    image: ghcr.io/sky22333/epay
     container_name: epay
     restart: always
     ports:
